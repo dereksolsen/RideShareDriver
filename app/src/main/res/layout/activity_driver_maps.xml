@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimaryDark"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/textView_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/textView_destination"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/textView_name"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView_distance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/textView_destination"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/textView_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/textView_distance"
+        android:textSize="20sp"/>
+
+    <Button
+        android:id="@+id/btn_arrived_pickUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_arrived_pickUp"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/textView_time"/>
+
+    <Button
+        android:id="@+id/btn_arrived_dropOff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_arrived_dropOff"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/textView_time"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fragment_arrived"
+        android:layout_below="@+id/btn_arrived_pickUp"
+        android:orientation="vertical">
+
+
+    </RelativeLayout>
+
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/driver_map"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        android:layout_below="@id/fragment_arrived"
+        tools:context=".DriverMapsActivity"
+        android:name="com.google.android.gms.maps.SupportMapFragment"/>
+
+    <ImageButton
+        android:id="@+id/driver_gps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fragment_arrived"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="10dp"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="10dp"
+        android:background="@null"
+        android:src="@mipmap/ic_gps"/>
+
+    <ImageButton
+        android:id="@+id/imageView_openGoogleMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="3dp"
+        android:scaleType="fitCenter"
+        android:src="@mipmap/ic_navigation"
+        android:background="@null"
+        tools:ignore="VectorDrawableCompat" />
+</RelativeLayout>

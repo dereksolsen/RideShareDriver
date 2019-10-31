@@ -1,0 +1,128 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignInActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20sp">
+
+            <TextView
+                android:id="@+id/signIn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Longville Ride Share Driver"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/bsu_logo"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_below="@+id/signIn"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/ic_launcher" />
+
+            <EditText
+                android:id="@+id/editText_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bsu_logo"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="46dp"
+                android:focusable="true"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/editText_email"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="20sp"
+                android:focusable="true"
+                android:hint="@string/pwd"
+                android:inputType="textPassword"
+                tools:ignore="UnknownId" />
+
+            <TextView
+                android:id="@+id/errorMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/password"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:visibility="gone"
+                android:textColor="@color/red"
+                app:layout_constraintEnd_toEndOf="@+id/background"
+                app:layout_constraintStart_toStartOf="@+id/background"
+                app:layout_constraintTop_toBottomOf="@+id/signInButton"
+                tools:ignore="UnknownIdInLayout"
+                tools:text="Longville Rideshare App" />
+
+
+            <Button
+                android:id="@+id/signInButton"
+                android:layout_width="290dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/errorMessage"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edittext_bg_button"
+                android:padding="10dp"
+                android:text="Sign In"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                tools:ignore="UnknownId" />
+
+            <Button
+                android:id="@+id/button_cancel"
+                android:layout_width="290dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/signInButton"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="100dp"
+                android:background="@drawable/edittext_bg_button_cancel"
+                android:padding="10dp"
+                android:text="Cancel"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                tools:ignore="UnknownId" />
+
+            <TextView
+                android:id="@+id/signing_in"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bsu_logo"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:text="@string/textView_connecting"
+                android:textSize="25dp" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_below="@+id/signing_in"
+                android:indeterminate="true"
+                android:layout_centerHorizontal="true"
+                android:indeterminateTint="@color/colorPrimaryDark"
+                tools:ignore="UnknownId" />
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
